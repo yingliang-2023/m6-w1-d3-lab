@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const withNavigateHook = (Component) => {
+const withHook = (Component) => {
   return (props) => {
     const params = useParams();
     const navigation = useNavigate();
@@ -9,4 +9,4 @@ const withNavigateHook = (Component) => {
   };
 };
 
-export default withNavigateHook;
+export default withHook;
