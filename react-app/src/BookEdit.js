@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Button, Container, Form, FormGroup, Input, Label } from "reactstrap";
-import hookFunction from "./hookFunction";
+import withHook from "./hookFunction";
 
 class BookEdit extends Component {
   emptyBook = {
@@ -46,21 +46,21 @@ class BookEdit extends Component {
       },
       body: JSON.stringify(item),
     });
-    // this.props.history.push("/");
+ 
     this.props.navigation("/");
   };
   render() {
     const { item } = this.state;
     const pagetitle = (
       <h2 className="mt-3">
-        {/* if item has an id number, otherwise */}
+
         {item._id ? "Edit Book" : "Add Book"}
       </h2>
     );
     return (
       <div>
         <Container>
-          {/* display the appropriate title */}
+
           {pagetitle}
           <Form onSubmit={this.handleSubmit}>
             <FormGroup>
@@ -104,4 +104,4 @@ class BookEdit extends Component {
   }
 }
 
-export default hookFunction(BookEdit);
+export default withHook(BookEdit);
